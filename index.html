@@ -1,214 +1,282 @@
 <!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Miniport by HTML5 UP</title>
+		<title id="pageTitle">蓬蓬 - 您的 Discord 翻譯與匯率助理</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<style>
+			/* 語言切換器 */
+			.lang-switcher {
+				text-align: center;
+				margin-bottom: 20px;
+				padding-top: 1.5em; /* 增加一點上方空間 */
+			}
+			.lang-switcher button {
+				background: none;
+				border: none;
+				color: #888; /* 配合模板的文字顏色 */
+				font-size: 1.1em;
+				cursor: pointer;
+				padding: 5px 10px;
+				transition: color 0.2s;
+			}
+			.lang-switcher button:hover {
+				color: #333;
+			}
+			.lang-switcher button.active {
+				color: #5865F2; /* Discord 藍色 */
+				font-weight: bold;
+			}
+			/* 程式碼區塊樣式 */
+			code {
+				background: #eee;
+				border-radius: 4px;
+				padding: 3px 6px;
+				font-family: 'Courier New', Courier, monospace;
+			}
+			/* 修正模板中 h3 下方 p 的邊距 */
+			.box.style1 p {
+				margin: 0; 
+			}
+			/* 修正功能區塊圖示的大小 */
+			.box.style1 .icon {
+				font-size: 3em;
+			}
+			/* 回饋表單的巢狀清單 */
+			#contact ul ul {
+				list-style-type: disc;
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			#contact ul ul li {
+				margin-bottom: 5px;
+			}
+		</style>
 	</head>
+	
 	<body class="is-preload">
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+		<nav id="nav">
+			<ul class="container">
+				<li><a href="#top" class="scrolly"><span lang="zh">頂部</span><span lang="en">Top</span></a></li>
+				<li><a href="#work" class="scrolly"><span lang="zh">主要功能</span><span lang="en">Features</span></a></li>
+				<li><a href="#portfolio" class="scrolly"><span lang="zh">如何使用</span><span lang="en">How to Use</span></a></li>
+				<li><a href="#contact" class="scrolly"><span lang="zh">支持與回饋</span><span lang="en">Support & Feedback</span></a></li>
+			</ul>
+		</nav>
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+		<article id="top" class="wrapper style1">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-5-large col-12-medium">
+						
+						<span class="image fit"><img src="images/pic00.jpg" alt="楊蓬蓬 機器人圖示" /></span>
+					
+					</div>
+					<div class="col-8 col-7-large col-12-medium">
+						
+						<div class="lang-switcher">
+							<button id="lang-btn-zh" onclick="switchLang('zh')">繁體中文</button>
+							<span>|</span>
+							<button id="lang-btn-en" onclick="switchLang('en')">English</button>
 						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. I'm <strong>Jane Doe</strong>.</h1>
-							</header>
-							<p>And this is <strong>Miniport</strong>, a free, fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp; released under the <a href="http://html5up.net/license">CCA license</a>.</p>
-							<a href="#work" class="button large scrolly">Learn about what I do</a>
-						</div>
+
+						<header>
+							<h1><span lang="zh">蓬蓬</span><span lang="en">Pong Pong</span></h1>
+						</header>
+						
+						<p lang="zh">跨越語言隔閡，即時掌握全球匯率！</p>
+						<p lang="en">Break language barriers & get real-time currency rates!</p>
+						
+						<a href="https://discord.com/oauth2/authorize?client_id=1433681262584926228&permissions=68672&integration_type=0&scope=bot" class="button large" target="_blank">
+							<span lang="zh">邀請「蓬蓬」到您的伺服器</span>
+							<span lang="en">Invite "Pong Pong" to Your Server</span>
+						</a>
 					</div>
 				</div>
-			</article>
+			</div>
+		</article>
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Here's all the stuff I do.</h2>
-						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
-								<h3>Consequat lorem</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-camera-retro"></span>
-								<h3>Lorem dolor tempus</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-thumbs-up"></span>
-								<h3>Feugiat posuere</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
-						</div>
+		<article id="work" class="wrapper style2">
+			<div class="container">
+				<header>
+					<h2 lang="zh">主要功能</h2>
+					<h2 lang="en">Main Features</h2>
+					<p lang="zh">「蓬蓬」是一個多功能 Discord 助理</p>
+					<p lang="en">"Pong Pong" is your multi-functional Discord assistant</p>
+				</header>
+				
+				<div class="row aln-center">
+					<div class="col-4 col-6-medium col-12-small">
+						<section class="box style1">
+							<span class="icon solid featured fa-language"></span>
+							<h3 lang="zh">智慧翻譯</h3><h3 lang="en">Smart Translation</h3>
+							<p lang="zh">支援 <code>!tr</code> 指令，自動偵測或指定語言 (en-jp) 進行翻譯。</p>
+							<p lang="en">Supports <code>!tr</code> command for auto-detection or specific pairs like <code>en-jp</code>.</p>
+						</section>
 					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
-					</footer>
+					<div class="col-4 col-6-medium col-12-small">
+						<section class="box style1">
+							<span class="icon solid featured fa-flag"></span>
+							<h3 lang="zh">表情符號翻譯</h3><h3 lang="en">Reaction Translation</h3>
+							<p lang="zh">對訊息按下 🇹🇼 🇯🇵 🇺🇸 等國旗，蓬蓬就會立刻為您翻譯。</p>
+							<p lang="en">React with 🇹🇼 🇯🇵 🇺🇸 flag emojis, and the bot will translate it instantly.</p>
+						</section>
+					</div>
+					<div class="col-4 col-6-medium col-12-small">
+						<section class="box style1">
+							<span class="icon solid featured fa-dollar-sign"></span>
+							<h3 lang="zh">即時匯率轉換</h3><h3 lang="en">Real-Time Currency</h3>
+							<p lang="zh">使用 <code>!cc</code> 指令快速查詢匯率，支援 <code>!cc 100 usd-twd</code> 精確查詢。</p>
+							<p lang="en">Use <code>!cc</code> to check rates. Supports precise queries like <code>!cc 100 usd-twd</code>.</p>
+						</section>
+					</div>
 				</div>
-			</article>
+				<footer>
+					<p lang="zh">還有更多功能正在開發中！</p>
+					<p lang="en">More features are currently in development!</p>
+					<a href="#portfolio" class="button large scrolly">
+						<span lang="zh">查看如何使用</span>
+						<span lang="en">See how to use it</span>
+					</a>
+				</footer>
+			</div>
+		</article>
 
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Here’s some stuff I made recently.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Magna feugiat</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Veroeros primis</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Lorem ipsum</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#contact" class="button large scrolly">Get in touch with me</a>
-					</footer>
-				</div>
-			</article>
-
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>Have me make stuff for you.</h2>
-						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum.</p>
-					</header>
-					<div class="row">
-						<div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		<article id="portfolio" class="wrapper style3">
+			<div class="container">
+				<header>
+					<h2 lang="zh">如何使用？</h2>
+					<h2 lang="en">How to Use?</h2>
+					<p lang="zh">簡單的指令，強大的功能。</p>
+					<p lang="en">Simple commands, powerful features.</p>
+				</header>
+				
+				<div class="row">
+					<div class="col-6 col-12-medium">
+						<h3><span lang="zh">翻譯指令 (<code>!tr</code>)</span><span lang="en">Translation (<code>!tr</code>)</span></h3>
+						<ul>
+							<li lang="zh"><code>!tr Hello world</code> (自動偵測並翻譯成繁體中文)</li>
+							<li lang="en"><code>!tr Hello world</code> (Auto-detects and translates to Traditional Chinese)</li>
+							<li lang="zh"><code>!tr en-jp Hello world</code> (將英文翻譯成日文)</li>
+							<li lang="en"><code>!tr en-jp Hello world</code> (Translates English to Japanese)</li>
 						</ul>
-					</footer>
+					</div>
+					<div class="col-6 col-12-medium">
+						<h3><span lang="zh">匯率指令 (<code>!cc</code>)</span><span lang="en">Currency (<code>!cc</code>)</span></h3>
+						<ul>
+							<li lang="zh"><code>!cc</code> (查詢預設 1 JPY 兌換 TWD)</li>
+							<li lang="en"><code>!cc</code> (Checks the default rate for 1 JPY to TWD)</li>
+							<li lang="zh"><code>!cc 100</code> (查詢 100 JPY 兌換 TWD)</li>
+							<li lang="en"><code>!cc 100</code> (Checks the rate for 100 JPY to TWD)</li>
+							<li lang="zh"><code>!cc usd-twd 50</code> (查詢 50 USD 兌換 TWD)</li>
+							<li lang="en"><code>!cc usd-twd 50</code> (Checks the rate for 50 USD to TWD)</li>
+						</ul>
+					</div>
 				</div>
-			</article>
+				<footer>
+					<p lang="zh">有任何問題嗎？</p>
+					<p lang="en">Any questions?</p>
+					<a href="#contact" class="button large scrolly">
+						<span lang="zh">聯絡我</span>
+						<span lang="en">Get in touch</span>
+					</a>
+				</footer>
+			</div>
+		</article>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<article id="contact" class="wrapper style4">
+			<div class="container medium">
+				<header>
+					<h2 lang="zh">支持與回饋</h2>
+					<h2 lang="en">Support & Feedback</h2>
+				</header>
+				
+				<div class="row">
+					<div class="col-12">
+						<h3 lang="zh">支持「蓬蓬」</h3><h3 lang="en">Support "Pong Pong"</h3>
+						<p lang="zh">「蓬蓬」是一個 24/7 運作的機器人，它依賴雲端伺服器和付費 API。如果您覺得它有幫助，可以考慮支持它的運作成本！</p>
+						<p lang="en">"Pong Pong" is a 24/7 bot relying on cloud servers and paid APIs. If you find it helpful, please consider supporting its costs!</p>
+						<a href="https://buymeacoffee.com/hijiri4005" class="button" target="_blank">
+							<span lang="zh">請我喝杯咖啡 (Buy Me a Coffee)</span>
+							<span lang="en">Buy Me a Coffee</span>
+						</a>
+						
+						<hr /> <h3 lang="zh">聯絡與回饋</h3><h3 lang="en">Contact & Feedback</h3>
+						<p lang="zh">遇到 Bug 或是您有很棒的功能建議嗎？歡迎透過以下方式聯繫我：</p>
+						<p lang="en">Found a bug or have a great feature idea? Feel free to contact me:</p>
+						<ul>
+							<li><strong>Email:</strong> a34159@gmail.com</li>
+							<li><a href="https://discord.gg/r8grruws" target="_blank">
+								<span lang="zh">加入我們的 Discord 支援伺服器 (推薦)</span>
+								<span lang="en">Join our Discord Support Server (Recommended)</span>
+							</a></li>
+							<li>
+								<strong lang="zh">填寫回饋表單:</strong>
+								<strong lang="en">Submit Feedback Form:</strong>
+								<ul>
+									<li><a href="https://forms.gle/xawXwNruVatAVDJN8" target="_blank">繁體中文 (Traditional Chinese)</a></li>
+									<li><a href="https://forms.gle/w1GCr1TSt5FHokhm6" target="_blank">English</a></li>
+									<li><a href="https://forms.gle/8Jk1U6rJWoChnAmf7" target="_blank">日本語 (Japanese)</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				
+				<footer>
+					<ul id="copyright">
+						<li>
+							<span lang="zh">由 a34159@gmail.com 開發 | 蓬蓬Bot 2025</span>
+							<span lang="en">Developed by a34159@gmail.com | Pong Pong Bot 2025</span>
+						</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+			</div>
+		</article>
 
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			function switchLang(lang) {
+				// 1. 設定 <html> 標籤的 lang 屬性 (讓 :lang() 偽類選擇器能運作)
+				// 我們改用 document.documentElement (這就是 <html> 標籤)
+				document.documentElement.lang = lang;
+				
+				// 2. JavaScript 切換顯示 (這是我們的主要方法)
+				if (lang === 'en') {
+					document.querySelectorAll('[lang="zh"]').forEach(el => el.style.display = 'none');
+					document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = ''); // 恢復 CSS 預設
+				} else {
+					document.querySelectorAll('[lang="zh"]').forEach(el => el.style.display = ''); // 恢復 CSS 預SET
+					document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
+				}
+				
+				// 3. 更新按鈕的 'active' 狀態
+				document.getElementById('lang-btn-zh').classList.toggle('active', lang === 'zh');
+				document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
+
+				// 4. 更新網頁標題
+				if (lang === 'en') {
+					document.getElementById('pageTitle').innerText = 'Pong Pong - Your Discord Translation & Currency Bot';
+				} else {
+					document.getElementById('pageTitle').innerText = '蓬蓬 - 您的 Discord 翻譯與匯率助理';
+				}
+			}
+			
+			// 頁面載入時，立即觸發一次預設語言 (中文)
+			document.addEventListener('DOMContentLoaded', () => {
+				switchLang('zh');
+			});
+		</script>
 	</body>
 </html>
