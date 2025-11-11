@@ -7,44 +7,43 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
-			/* 語言切換器 */
 			.lang-switcher {
 				text-align: center;
 				margin-bottom: 20px;
-				padding-top: 1.5em; /* 增加一點上方空間 */
+				padding-top: 1.5em; 
 			}
 			.lang-switcher button {
 				background: none;
 				border: none;
-				color: #888; /* 配合模板的文字顏色 */
+				/* 恢復成我們第一版的樣式 */
+				color: var(--text-muted, #b9bbbe); 
 				font-size: 1.1em;
 				cursor: pointer;
 				padding: 5px 10px;
 				transition: color 0.2s;
 			}
 			.lang-switcher button:hover {
-				color: #333;
+				color: var(--text-color, #FFFFFF);
 			}
+			/* 被選中的語言按鈕會高亮 */
 			.lang-switcher button.active {
-				color: #5865F2; /* Discord 藍色 */
+				color: var(--primary-color, #5865F2);
 				font-weight: bold;
 			}
-			/* 程式碼區塊樣式 */
+
+			/* (以下是模板原有的輔助樣式，保持不變) */
 			code {
 				background: #eee;
 				border-radius: 4px;
 				padding: 3px 6px;
 				font-family: 'Courier New', Courier, monospace;
 			}
-			/* 修正模板中 h3 下方 p 的邊距 */
 			.box.style1 p {
 				margin: 0; 
 			}
-			/* 修正功能區塊圖示的大小 */
 			.box.style1 .icon {
 				font-size: 3em;
 			}
-			/* 回饋表單的巢狀清單 */
 			#contact ul ul {
 				list-style-type: disc;
 				margin-top: 10px;
@@ -60,10 +59,10 @@
 
 		<nav id="nav">
 			<ul class="container">
-				<li><a href="#top" class="scrolly"><span lang="zh">頂部</span><span lang="en">Top</span></a></li>
-				<li><a href="#work" class="scrolly"><span lang="zh">主要功能</span><span lang="en">Features</span></a></li>
-				<li><a href="#portfolio" class="scrolly"><span lang="zh">如何使用</span><span lang="en">How to Use</span></a></li>
-				<li><a href="#contact" class="scrolly"><span lang="zh">支持與回饋</span><span lang="en">Support & Feedback</span></a></li>
+				<li><a href="#top" class="scrolly"><span lang="zh">頂部</span><span lang="en">Top</span><span lang="ja">トップ</span></a></li>
+				<li><a href="#work" class="scrolly"><span lang="zh">主要功能</span><span lang="en">Features</span><span lang="ja">主な機能</span></a></li>
+				<li><a href="#portfolio" class="scrolly"><span lang="zh">如何使用</span><span lang="en">How to Use</span><span lang="ja">使い方</span></a></li>
+				<li><a href="#contact" class="scrolly"><span lang="zh">支持與回饋</span><span lang="en">Support & Feedback</span><span lang="ja">サポート</span></a></li>
 			</ul>
 		</nav>
 
@@ -72,7 +71,7 @@
 				<div class="row">
 					<div class="col-4 col-5-large col-12-medium">
 						
-						<span class="image fit"><img src="images/pic00.jpg" alt="楊蓬蓬 機器人圖示" /></span>
+						<span class="image fit"><img src="images/pic00.jpg" alt="蓬蓬 機器人圖示" /></span>
 					
 					</div>
 					<div class="col-8 col-7-large col-12-medium">
@@ -81,18 +80,22 @@
 							<button id="lang-btn-zh" onclick="switchLang('zh')">繁體中文</button>
 							<span>|</span>
 							<button id="lang-btn-en" onclick="switchLang('en')">English</button>
+							<span>|</span>
+							<button id="lang-btn-ja" onclick="switchLang('ja')">日本語</button>
 						</div>
 
 						<header>
-							<h1><span lang="zh">蓬蓬</span><span lang="en">Pong Pong</span></h1>
+							<h1><span lang="zh">蓬蓬</span><span lang="en">Pong Pong</span><span lang="ja">ポンポン</span></h1>
 						</header>
 						
 						<p lang="zh">跨越語言隔閡，即時掌握全球匯率！</p>
 						<p lang="en">Break language barriers & get real-time currency rates!</p>
+						<p lang="ja">言葉の壁を越え、リアルタイムの為替レートを把握！</p>
 						
 						<a href="https://discord.com/oauth2/authorize?client_id=1433681262584926228&permissions=68672&integration_type=0&scope=bot" class="button large" target="_blank">
 							<span lang="zh">邀請「蓬蓬」到您的伺服器</span>
 							<span lang="en">Invite "Pong Pong" to Your Server</span>
+							<span lang="ja">「ポンポン」をサーバーに招待</span>
 						</a>
 					</div>
 				</div>
@@ -104,42 +107,49 @@
 				<header>
 					<h2 lang="zh">主要功能</h2>
 					<h2 lang="en">Main Features</h2>
+					<h2 lang="ja">主な機能</h2>
 					<p lang="zh">「蓬蓬」是一個多功能 Discord 助理</p>
 					<p lang="en">"Pong Pong" is your multi-functional Discord assistant</p>
+					<p lang="ja">「ポンポン」は多機能Discordアシスタントです</p>
 				</header>
 				
 				<div class="row aln-center">
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box style1">
 							<span class="icon solid featured fa-language"></span>
-							<h3 lang="zh">智慧翻譯</h3><h3 lang="en">Smart Translation</h3>
+							<h3 lang="zh">智慧翻譯</h3><h3 lang="en">Smart Translation</h3><h3 lang="ja">スマート翻訳</h3>
 							<p lang="zh">支援 <code>!tr</code> 指令，自動偵測或指定語言 (en-jp) 進行翻譯。</p>
 							<p lang="en">Supports <code>!tr</code> command for auto-detection or specific pairs like <code>en-jp</code>.</p>
+							<p lang="ja"><code>!tr</code> コマンド対応。自動検出または言語ペア (en-jp) 指定で翻訳します。</p>
 						</section>
 					</div>
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box style1">
 							<span class="icon solid featured fa-flag"></span>
-							<h3 lang="zh">表情符號翻譯</h3><h3 lang="en">Reaction Translation</h3>
+							<h3 lang="zh">表情符號翻譯</h3><h3 lang="en">Reaction Translation</h3><h3 lang="ja">絵文字翻訳</h3>
 							<p lang="zh">對訊息按下 🇹🇼 🇯🇵 🇺🇸 等國旗，蓬蓬就會立刻為您翻譯。</p>
-							<p lang="en">React with 🇹🇼 🇯🇵 🇺🇸 flag emojis, and the bot will translate it instantly.</p>
+							<p lang="en">React to any message with 🇹🇼 🇯🇵 🇺🇸 flag emojis, and the bot will translate it instantly.</p>
+							<p lang="ja">メッセージに 🇹🇼 🇯🇵 🇺🇸 などの国旗でリアクションすると、すぐに翻訳します。</p>
 						</section>
 					</div>
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box style1">
 							<span class="icon solid featured fa-dollar-sign"></span>
-							<h3 lang="zh">即時匯率轉換</h3><h3 lang="en">Real-Time Currency</h3>
+							<h3 lang="zh">即時匯率轉換</h3><h3 lang="en">Real-Time Currency</h3><h3 lang="ja">リアルタイム為替</h3>
 							<p lang="zh">使用 <code>!cc</code> 指令快速查詢匯率，支援 <code>!cc 100 usd-twd</code> 精確查詢。</p>
 							<p lang="en">Use <code>!cc</code> to check rates. Supports precise queries like <code>!cc 100 usd-twd</code>.</p>
+							<p lang="ja"><code>!cc</code> コマンドで為替レートを照会。<code>!cc 100 usd-twd</code> のような詳細検索も可能。</p>
 						</section>
 					</div>
 				</div>
 				<footer>
 					<p lang="zh">還有更多功能正在開發中！</p>
 					<p lang="en">More features are currently in development!</p>
+					<p lang="ja">さらに多くの機能を開発中です！</p>
 					<a href="#portfolio" class="button large scrolly">
 						<span lang="zh">查看如何使用</span>
 						<span lang="en">See how to use it</span>
+						<span lang="ja">使い方を見る</span>
 					</a>
 				</footer>
 			</div>
@@ -150,38 +160,50 @@
 				<header>
 					<h2 lang="zh">如何使用？</h2>
 					<h2 lang="en">How to Use?</h2>
+					<h2 lang="ja">使い方</h2>
 					<p lang="zh">簡單的指令，強大的功能。</p>
 					<p lang="en">Simple commands, powerful features.</p>
+					<p lang="ja">シンプルなコマンド、強力な機能。</p>
 				</header>
 				
 				<div class="row">
 					<div class="col-6 col-12-medium">
-						<h3><span lang="zh">翻譯指令 (<code>!tr</code>)</span><span lang="en">Translation (<code>!tr</code>)</span></h3>
+						<h3><span lang="zh">翻譯指令 (<code>!tr</code>)</span><span lang="en">Translation (<code>!tr</code>)</span><span lang="ja">翻訳コマンド (<code>!tr</code>)</span></h3>
 						<ul>
 							<li lang="zh"><code>!tr Hello world</code> (自動偵測並翻譯成繁體中文)</li>
 							<li lang="en"><code>!tr Hello world</code> (Auto-detects and translates to Traditional Chinese)</li>
+							<li lang="ja"><code>!tr Hello world</code> (自動検出して繁体字中国語に翻訳)</li>
+							
 							<li lang="zh"><code>!tr en-jp Hello world</code> (將英文翻譯成日文)</li>
 							<li lang="en"><code>!tr en-jp Hello world</code> (Translates English to Japanese)</li>
+							<li lang="ja"><code>!tr en-jp Hello world</code> (英語を日本語に翻訳)</li>
 						</ul>
 					</div>
 					<div class="col-6 col-12-medium">
-						<h3><span lang="zh">匯率指令 (<code>!cc</code>)</span><span lang="en">Currency (<code>!cc</code>)</span></h3>
+						<h3><span lang="zh">匯率指令 (<code>!cc</code>)</span><span lang="en">Currency (<code>!cc</code>)</span><span lang="ja">為替コマンド (<code>!cc</code>)</span></h3>
 						<ul>
 							<li lang="zh"><code>!cc</code> (查詢預設 1 JPY 兌換 TWD)</li>
 							<li lang="en"><code>!cc</code> (Checks the default rate for 1 JPY to TWD)</li>
+							<li lang="ja"><code>!cc</code> (デフォルトで 1 JPY から TWD へのレートを照会)</li>
+
 							<li lang="zh"><code>!cc 100</code> (查詢 100 JPY 兌換 TWD)</li>
 							<li lang="en"><code>!cc 100</code> (Checks the rate for 100 JPY to TWD)</li>
+							<li lang="ja"><code>!cc 100</code> (100 JPY から TWD へのレートを照会)</li>
+
 							<li lang="zh"><code>!cc usd-twd 50</code> (查詢 50 USD 兌換 TWD)</li>
 							<li lang="en"><code>!cc usd-twd 50</code> (Checks the rate for 50 USD to TWD)</li>
+							<li lang="ja"><code>!cc usd-twd 50</code> (50 USD から TWD へのレートを照会)</li>
 						</ul>
 					</div>
 				</div>
 				<footer>
 					<p lang="zh">有任何問題嗎？</p>
 					<p lang="en">Any questions?</p>
+					<p lang="ja">何かご質問は？</p>
 					<a href="#contact" class="button large scrolly">
 						<span lang="zh">聯絡我</span>
 						<span lang="en">Get in touch</span>
+						<span lang="ja">お問い合わせ</span>
 					</a>
 				</footer>
 			</div>
@@ -192,30 +214,38 @@
 				<header>
 					<h2 lang="zh">支持與回饋</h2>
 					<h2 lang="en">Support & Feedback</h2>
+					<h2 lang="ja">サポート & フィードバック</h2>
 				</header>
 				
 				<div class="row">
 					<div class="col-12">
-						<h3 lang="zh">支持「蓬蓬」</h3><h3 lang="en">Support "Pong Pong"</h3>
+						<h3 lang="zh">支持「蓬蓬」</h3><h3 lang="en">Support "Pong Pong"</h3><h3 lang="ja">「ポンポン」をサポート</h3>
 						<p lang="zh">「蓬蓬」是一個 24/7 運作的機器人，它依賴雲端伺服器和付費 API。如果您覺得它有幫助，可以考慮支持它的運作成本！</p>
 						<p lang="en">"Pong Pong" is a 24/7 bot relying on cloud servers and paid APIs. If you find it helpful, please consider supporting its costs!</p>
+						<p lang="ja">「ポンポン」はクラウドサーバーと有料APIで24時間稼働しています。もしこのボットが役に立つと感じたら、運営コストのサポートをご検討ください！</p>
+						
 						<a href="https://buymeacoffee.com/hijiri4005" class="button" target="_blank">
 							<span lang="zh">請我喝杯咖啡 (Buy Me a Coffee)</span>
 							<span lang="en">Buy Me a Coffee</span>
+							<span lang="ja">コーヒーをご馳走する (Buy Me a Coffee)</span>
 						</a>
 						
-						<hr /> <h3 lang="zh">聯絡與回饋</h3><h3 lang="en">Contact & Feedback</h3>
+						<hr /> <h3 lang="zh">聯絡與回饋</h3><h3 lang="en">Contact & Feedback</h3><h3 lang="ja">連絡先 & フィードバック</h3>
 						<p lang="zh">遇到 Bug 或是您有很棒的功能建議嗎？歡迎透過以下方式聯繫我：</p>
 						<p lang="en">Found a bug or have a great feature idea? Feel free to contact me:</p>
+						<p lang="ja">バグを発見した場合、または新機能の提案がありますか？ 以下の方法でお気軽にご連絡ください：</p>
+						
 						<ul>
 							<li><strong>Email:</strong> a34159@gmail.com</li>
 							<li><a href="https://discord.gg/r8grruws" target="_blank">
 								<span lang="zh">加入我們的 Discord 支援伺服器 (推薦)</span>
 								<span lang="en">Join our Discord Support Server (Recommended)</span>
+								<span lang="ja">Discordサポートサーバーに参加 (推奨)</span>
 							</a></li>
 							<li>
 								<strong lang="zh">填寫回饋表單:</strong>
 								<strong lang="en">Submit Feedback Form:</strong>
+								<strong lang="ja">フィードバックフォーム:</strong>
 								<ul>
 									<li><a href="https://forms.gle/xawXwNruVatAVDJN8" target="_blank">繁體中文 (Traditional Chinese)</a></li>
 									<li><a href="https://forms.gle/w1GCr1TSt5FHokhm6" target="_blank">English</a></li>
@@ -224,7 +254,6 @@
 							</li>
 						</ul>
 					</div>
-					
 				</div>
 				
 				<footer>
@@ -232,6 +261,7 @@
 						<li>
 							<span lang="zh">由 a34159@gmail.com 開發 | 蓬蓬Bot 2025</span>
 							<span lang="en">Developed by a34159@gmail.com | Pong Pong Bot 2025</span>
+							<span lang="ja">開発者: a34159@gmail.com | ポンポンBot 2025</span>
 						</li>
 						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
@@ -248,26 +278,28 @@
 
 		<script>
 			function switchLang(lang) {
-				// 1. 設定 <html> 標籤的 lang 屬性 (讓 :lang() 偽類選擇器能運作)
-				// 我們改用 document.documentElement (這就是 <html> 標籤)
+				// 1. 設定 <html> 標籤的 lang 屬性
 				document.documentElement.lang = lang;
 				
-				// 2. JavaScript 切換顯示 (這是我們的主要方法)
-				if (lang === 'en') {
-					document.querySelectorAll('[lang="zh"]').forEach(el => el.style.display = 'none');
-					document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = ''); // 恢復 CSS 預設
-				} else {
-					document.querySelectorAll('[lang="zh"]').forEach(el => el.style.display = ''); // 恢復 CSS 預SET
-					document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
-				}
+				// 2. 建立所有語言的陣列
+				const languages = ['zh', 'en', 'ja'];
 				
-				// 3. 更新按鈕的 'active' 狀態
+				// 3. 迴圈：隱藏所有語言，只顯示被選中的語言
+				languages.forEach(l => {
+					const displayValue = (l === lang) ? '' : 'none'; // 如果是選中語言，就設為空 (恢復CSS預設)，否則隱藏
+					document.querySelectorAll(`[lang="${l}"]`).forEach(el => el.style.display = displayValue);
+				});
+				
+				// 4. 更新按鈕的 'active' 狀態
 				document.getElementById('lang-btn-zh').classList.toggle('active', lang === 'zh');
 				document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
+				document.getElementById('lang-btn-ja').classList.toggle('active', lang === 'ja');
 
-				// 4. 更新網頁標題
+				// 5. 更新網頁標題
 				if (lang === 'en') {
 					document.getElementById('pageTitle').innerText = 'Pong Pong - Your Discord Translation & Currency Bot';
+				} else if (lang === 'ja') {
+					document.getElementById('pageTitle').innerText = 'ポンポン - Discord 翻訳＆為替ボット';
 				} else {
 					document.getElementById('pageTitle').innerText = '蓬蓬 - 您的 Discord 翻譯與匯率助理';
 				}
