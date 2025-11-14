@@ -12,21 +12,54 @@
 		
 		<style>
 			body { font-family: 'Open Sans', 'Noto Sans TC', sans-serif !important; }
+		
 			.wrapper.style1 .lang-switcher { text-align: center; margin-bottom: 20px; padding-top: 1em; font-size: 0.9em; }
 			.wrapper.style1 .lang-switcher button { background: none !important; border: none !important; box-shadow: none !important; padding: 0 5px !important; margin: 0 !important; font: inherit; color: #333 !important; cursor: pointer; transition: color 0.2s; font-weight: normal !important; display: inline-block; line-height: 1.5; }
 			.wrapper.style1 .lang-switcher button:hover { color: #5865F2 !important; }
 			.wrapper.style1 .lang-switcher button.active { color: #5865F2 !important; font-weight: bold !important; }
 			.wrapper.style1 .lang-switcher span { color: #aaa; font-size: 0.9em; margin: 0 5px; }
+
 			.box.style1 .icon.featured { width: 100px !important; height: 100px !important; line-height: 100px !important; font-size: 4em !important; margin: 0 auto 1em auto !important; border-radius: 100% !important; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15) !important; display: flex !important; align-items: center; justify-content: center; background: #f77777; color: #fff !important; }
 			.box.style1 .icon.solid.featured.fa-language::before { font-size: 0.8em !important; line-height: 1.2em !important; }
 			.box.style1 .icon.featured.fa-flag::before, .box.style1 .icon.featured.fa-dollar-sign::before { line-height: 1 !important; font-size: 1em !important; }
+			
 			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
 			.box.style1 p { margin: 0; }
-			#contact ul { list-style: none; padding-left: 0; }
-			#contact ul li { margin-bottom: 5px; }
-			#contact ul ul { list-style-type: disc; margin-top: 10px; margin-left: 20px; }
-			#contact ul ul li { margin-bottom: 5px; }
-			#contact h3.subsection-title { margin-top: 2em; margin-bottom: 0.8em; font-size: 1.2em; color: #FFFFFF !important; }
+			
+			/* 【【【您的最新修正】】】 */
+
+			/* 1. 強制 Contact 區塊 (style4) 內部所有文字都置中 */
+			.wrapper.style4 .container.medium {
+				text-align: center !important;
+			}
+			
+			/* 2. 移除「聯絡區塊」最外層 ul 的列表點 */
+			#contact ul { 
+				list-style: none; 
+				padding-left: 0; 
+			}
+			#contact ul li { 
+				margin-bottom: 5px; 
+			}
+			
+			/* 3. 【修正】移除 Google 表單連結 (巢狀 ul) 的列表點和縮排 */
+			#contact ul ul { 
+				list-style-type: none !important; /* 強制移除「・」 */
+				margin-top: 10px;
+				margin-left: 0 !important; /* 移除左側縮排 */
+				padding-left: 0 !important;
+			}
+			#contact ul ul li { 
+				margin-bottom: 5px; 
+			}
+			
+			/* 4. 強制副標題為白色 (保持不變) */
+			#contact h3.subsection-title { 
+				margin-top: 2em; 
+				margin-bottom: 0.8em; 
+				font-size: 1.2em; 
+				color: #FFFFFF !important; 
+			}
 		</style>
 	</head>
 	
@@ -152,25 +185,25 @@
 						
 						<hr />
 						
-						<h3 class="subsection-title" data-key="contact_discord_title">Discord 支援伺服器:</h3>
+						<h3 class="subsection-title" data-key="contact_discord_title">Discord 支援伺服器</h3>
 						<ul>
 							<li><a href="https://discord.gg/r8grruws" target="_blank" data-key="support_feedback_discord">
 								加入我們的 Discord 支援伺服器
 							</a></li>
 						</ul>
 						
-						<h3 class="subsection-title" data-key="contact_email_title">Email:</h3>
+						<h3 class="subsection-title" data-key="contact_email_title">Email</h3>
 						<ul>
 							<li>a34159@gmail.com</li>
 						</ul>
 						
-						<h3 class="subsection-title" data-key="contact_form_title">需要您的回饋:</h3>
+						<h3 class="subsection-title" data-key="contact_form_title">需要您的回饋</h3>
 						<ul>
 							<li>
 								<ul>
-									<li><a href="https://forms.gle/xawXwNruVatAVDJN8" target="_blank">繁體中文</a></li>
-									<li><a href="https://forms.gle/w1GCr1TSt5FHokhm6" target="_blank">English</a></li>
-									<li><a href="https://forms.gle/8Jk1U6rJWoChnAmf7" target="_blank">日本語</a></li>
+									<li><a href="https://forms.gle/xawXwNruVatAVDJN8" target="_blank" data-key="form_zh">繁體中文</a></li>
+									<li><a href="https://forms.gle/w1GCr1TSt5FHokhm6" target="_blank" data-key="form_en">English</a></li>
+									<li><a href="https://forms.gle/8Jk1U6rJWoChnAmf7" target="_blank" data-key="form_ja">日本語</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -233,10 +266,13 @@
 					support_donate_title: "支持「蓬蓬」",
 					support_donate_desc: "「蓬蓬」是一個 24/7 運作的機器人，它依賴雲端伺服器和付費 API。如果您覺得它有幫助，可以考慮支持它的運作成本！",
 					support_donate_btn: "請我喝杯咖啡 (Buy Me a Coffee)",
-					contact_discord_title: "Discord 支援伺服器:", // <-- 新增
-					contact_email_title: "Email:",
-					contact_form_title: "需要您的回饋:", // <-- 修改
+					contact_discord_title: "Discord 支援伺服器", // <-- 修改
+					contact_email_title: "Email", // <-- 修改
+					contact_form_title: "需要您的回饋", // <-- 修改
 					support_feedback_discord: "加入我們的 Discord 支援伺服器", // <-- 修改
+					form_zh: "繁體中文", // <-- 修改
+					form_en: "English", // <-- 修改
+					form_ja: "日本語", // <-- 修改
 					footer_credit: "由 Hijiri 開發 | 蓬蓬 Bot v0.1"
 				},
 				// 英文
@@ -274,10 +310,13 @@
 					support_donate_title: "Support \"Pong Pong\"",
 					support_donate_desc: "\"Pong Pong\" is a 24/7 bot relying on cloud servers and paid APIs. If you find it helpful, please consider supporting its costs!",
 					support_donate_btn: "Buy Me a Coffee",
-					contact_discord_title: "Discord Support Server:", // <-- 新增
-					contact_email_title: "Email:",
-					contact_form_title: "We Need Your Feedback:", // <-- 修改
+					contact_discord_title: "Discord Support Server", // <-- 修改
+					contact_email_title: "Email", // <-- 修改
+					contact_form_title: "We Need Your Feedback", // <-- 修改
 					support_feedback_discord: "Join our Discord Support Server", // <-- 修改
+					form_zh: "繁體中文", // <-- 修改
+					form_en: "English", // <-- 修改
+					form_ja: "日本語", // <-- 修改
 					footer_credit: "Developed by Hijiri | Pong Pong Bot v0.1"
 				},
 				// 日文
@@ -313,12 +352,15 @@
 					how_to_footer_btn: "お問い合わせ",
 					support_title: "サポート & フィードバック",
 					support_donate_title: "「ポンポン」をサポート",
-					support_donate_desc: "「ポンポン」はクラウドサーバーと有料APIで24時間稼働しています。もしこのボットが役に立つと感じたら、運営コストのサポートをご検討ください！",
+					support_donate_desc: "「ポンポン」はクラウドサーバーと有料APIで24時間稼動しています。もしこのボットが役に立つと感じたら、運営コストのサポートをご検討ください！",
 					support_donate_btn: "コーヒーをご馳走する (Buy Me a Coffee)",
-					contact_discord_title: "Discordサポートサーバー:", // <-- 新增
-					contact_email_title: "Email:",
-					contact_form_title: "フィードバックのお願い:", // <-- 修改
+					contact_discord_title: "Discordサポートサーバー", // <-- 修改
+					contact_email_title: "Email", // <-- 修改
+					contact_form_title: "フィードバックのお願い", // <-- 修改
 					support_feedback_discord: "Discordサポートサーバーに参加", // <-- 修改
+					form_zh: "繁體中文", // <-- 修改
+					form_en: "English", // <-- 修改
+					form_ja: "日本語", // <-- 修改
 					footer_credit: "開発者: Hijiri | ポンポン Bot v0.1"
 				}
 			};
