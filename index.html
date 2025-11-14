@@ -59,13 +59,24 @@
 				font-size: 0.9em;
 				margin: 0 5px;
 			}
-			/* 【新增】修正智慧翻譯圖示的文字超出問題 */
-			.box.style1 .icon.solid.featured.fa-language::before {
-				/* 調整字體大小，讓文字更小 */
-				font-size: 0.8em; 
-				/* 調整行高，讓文字更置中 */
-				line-height: 1.2; 
+			/* 【修正】確保所有圖示（包括智慧翻譯）的容器大小和內容顯示一致 */
+			.box.style1 .icon {
+				/* 確保圖示容器有足夠的高度和寬度 */
+				width: 100px !important; /* 強制寬度，確保與其他圖示一致 */
+				height: 100px !important; /* 強制高度，確保與其他圖示一致 */
+				line-height: 100px !important; /* 強制行高，確保內容垂直置中 */
+				font-size: 4em !important; /* 統一圖示大小，與模板預設匹配 */
 			}
+			/* 針對智慧翻譯圖示內的文字進行微調 */
+			.box.style1 .icon.solid.featured.fa-language::before {
+				font-size: 0.8em !important; /* 微調文字大小，讓其在框內顯示 */
+				line-height: 1.2em !important; /* 微調文字行高，讓其垂直置中 */
+			}
+			
+			/* (您其他的 code, .box.style1 p 等樣式保持不變) */
+			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
+			/* ... (其他樣式) ... */
+		</style>
 			/* (其他輔助樣式，保持不變) */
 			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
 			.box.style1 p { margin: 0; }
@@ -390,4 +401,5 @@
 		</script>
 	</body>
 </html>
+
 
