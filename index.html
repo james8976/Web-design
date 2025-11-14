@@ -59,7 +59,13 @@
 				font-size: 0.9em;
 				margin: 0 5px;
 			}
-
+			/* 【新增】修正智慧翻譯圖示的文字超出問題 */
+			.box.style1 .icon.solid.featured.fa-language::before {
+				/* 調整字體大小，讓文字更小 */
+				font-size: 0.8em; 
+				/* 調整行高，讓文字更置中 */
+				line-height: 1.2; 
+			}
 			/* (其他輔助樣式，保持不變) */
 			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
 			.box.style1 p { margin: 0; }
@@ -384,3 +390,4 @@
 		</script>
 	</body>
 </html>
+
