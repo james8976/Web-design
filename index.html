@@ -26,43 +26,37 @@
 			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
 			.box.style1 p { margin: 0; }
 			
-			/* 【【【您的最新修正】】】 */
+			.wrapper.style4 .container.medium { text-align: center !important; }
+			#contact ul { list-style: none; padding-left: 0; }
+			#contact ul li { margin-bottom: 5px; }
+			#contact ul ul { list-style-type: none !important; margin-top: 10px; margin-left: 0 !important; padding-left: 0 !important; }
+			#contact ul ul li { margin-bottom: 5px; }
+			#contact h3.subsection-title { margin-top: 2em; margin-bottom: 0.8em; font-size: 1.2em; color: #FFFFFF !important; }
 
-			/* 1. 強制 Contact 區塊 (style4) 內部所有文字都置中 */
-			.wrapper.style4 .container.medium {
-				text-align: center !important;
+			/* 【【【您的最新修正：圖片邊框】】】 */
+			/* 針對首頁圖片容器 */
+			.wrapper.style1 .image.fit {
+				margin: 0 !important; /* 移除任何外部間距 */
+				border-radius: 8px !important; /* 輕微圓角，讓邊緣柔和 */
+				overflow: hidden !important; /* 確保圓角生效，裁剪超出部分 */
+				box-shadow: none !important; /* 移除任何陰影 */
 			}
-			
-			/* 2. 移除「聯絡區塊」最外層 ul 的列表點 */
-			#contact ul { 
-				list-style: none; 
-				padding-left: 0; 
-			}
-			#contact ul li { 
-				margin-bottom: 5px; 
-			}
-			
-			/* 3. 【修正】移除 Google 表單連結 (巢狀 ul) 的列表點和縮排 */
-			#contact ul ul { 
-				list-style-type: none !important; /* 強制移除「・」 */
-				margin-top: 10px;
-				margin-left: 0 !important; /* 移除左側縮排 */
-				padding-left: 0 !important;
-			}
-			#contact ul ul li { 
-				margin-bottom: 5px; 
-			}
-			
-			/* 4. 強制副標題為白色 (保持不變) */
-			#contact h3.subsection-title { 
-				margin-top: 2em; 
-				margin-bottom: 0.8em; 
-				font-size: 1.2em; 
-				color: #FFFFFF !important; 
+			/* 針對首頁圖片本身 */
+			.wrapper.style1 .image.fit img {
+				width: 100% !important; /* 確保圖片寬度填滿容器 */
+				height: 100% !important; /* 確保圖片高度填滿容器 */
+				object-fit: cover !important; /* 讓圖片覆蓋整個容器，多餘部分裁剪 */
+				display: block !important; /* 確保圖片行為正常 */
+				border: none !important; /* 移除所有邊框 */
+				padding: 0 !important; /* 移除所有內距 */
+				background: none !important; /* 移除背景色 */
 			}
 		</style>
 	</head>
 	
+	<body>
+		</body>
+</html>	
 	<body class="is-preload">
 
 		<nav id="nav">
@@ -387,4 +381,5 @@
 		</script>
 	</body>
 </html>
+
 
