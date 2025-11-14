@@ -7,69 +7,66 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
-			/* 讓 <nav> 中的語言切換按鈕看起來和 <a> 連結一模一樣 */
-			#nav ul li .lang-button { /* 使用新的 class 名稱以便精確控制 */
-				-moz-appearance: none;
-				-webkit-appearance: none;
-				-ms-appearance: none;
-				appearance: none;
+			/* 語言切換器 (在 Header 中) */
+			.lang-switcher {
+				text-align: center;
+				margin-bottom: 20px; 
+				padding-top: 1em;
+				/* 縮小字體 */
+				font-size: 0.9em; 
+				/* 解決 Image 2: 顏色不清楚的問題 */
+				color: #555; 
+			}
+			.lang-switcher button {
 				background: none;
-				/* 移除邊框 */
+				/* 解決 Image 2: 移除邊框 */
 				border: none; 
-				padding: 0;
 				font: inherit; 
 				color: inherit; 
 				cursor: pointer;
-				text-decoration: none;
-				
-				/* 複製 main.css 中 nav a 的樣式，但縮小字體 */
-				display: block;
-				padding: 0 0.5em; /* 左右間距稍微縮小 */
-				height: 3.75em;
-				line-height: 3.75em;
-				color: #555; /* 預設顏色 */
-				outline: 0;
-				
-				/* 縮小字體 */
-				font-size: 0.9em; /* 調整字體大小，可以嘗試 0.8em, 0.9em, 1.0em */
-				
-				/* 確保字體不是粗體，除非 active */
+				padding: 0 5px;
+				transition: color 0.2s;
+				/* 解決 Image 2: 統一字體 (非粗體) */
 				font-weight: normal; 
 			}
-			#nav ul li .lang-button:hover {
-				color: #333; 
+			.lang-switcher button:hover {
+				color: #333; /* 滑鼠懸停時變深 */
 			}
-			
-			/* 被選中的語言按鈕會高亮，並且可以設定為粗體 */
-			#nav ul li .lang-button.active {
+			/* 被選中的語言按鈕會高亮 (如 Image 3 所示) */
+			.lang-switcher button.active {
 				color: #5865F2; /* Discord 藍色 (高亮) */
-				font-weight: bold; /* 選中時可以加粗 */
+				font-weight: bold;
 			}
-
-			/* 讓導覽列中的語言切換按鈕之間有分隔線 */
-			#nav ul li.lang-separator::before {
-				content: '|';
-				color: #888; /* 分隔線顏色 */
-				margin: 0 0.25em; /* 調整分隔線與文字的間距 */
-				line-height: 3.75em; /* 與按鈕對齊 */
-				display: inline-block; /* 確保能正確顯示 */
-				font-size: 0.9em; /* 與按鈕字體大小一致 */
-			}
-			/* 第一個語言按鈕前不需要分隔線 */
-			#nav ul li:first-of-type.lang-item::before {
-				content: none;
-			}
-
 
 			/* (其他輔助樣式，保持不變) */
 			code { background: #eee; border-radius: 4px; padding: 3px 6px; font-family: 'Courier New', Courier, monospace; }
 			.box.style1 p { margin: 0; }
 			.box.style1 .icon { font-size: 3em; }
-			#contact ul { list-style: none; padding-left: 0; }
-			#contact ul li { margin-bottom: 5px; }
-			#contact ul ul { list-style-type: disc; margin-top: 10px; margin-left: 20px; }
-			#contact ul ul li { margin-bottom: 5px; }
-			#contact h3.subsection-title { margin-top: 2em; margin-bottom: 0.8em; font-size: 1.2em; color: #333; }
+			
+			/* 解決 Image 1: 移除聯絡區的「・」列表點 */
+			#contact ul {
+				list-style: none;
+				padding-left: 0;
+			}
+			#contact ul li {
+				margin-bottom: 5px; 
+			}
+			/* 回饋表單的巢狀清單樣式 (保留「・」) */
+			#contact ul ul {
+				list-style-type: disc; 
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			#contact ul ul li {
+				margin-bottom: 5px;
+			}
+			/* 解決 Image 1: 副標題樣式 */
+			#contact h3.subsection-title {
+				margin-top: 2em; 
+				margin-bottom: 0.8em; 
+				font-size: 1.2em; 
+				color: #333; 
+			}
 		</style>
 	</head>
 	
@@ -81,16 +78,6 @@
 				<li><a href="#work" class="scrolly" data-key="nav_features">主要功能</a></li>
 				<li><a href="#portfolio" class="scrolly" data-key="nav_how_to">如何使用</a></li>
 				<li><a href="#contact" class="scrolly" data-key="nav_support">支持與回饋</a></li>
-				
-				<li class="lang-item" style="margin-left: auto;">
-					<button id="lang-btn-zh" class="lang-button" onclick="switchLang('zh')">繁體中文</button>
-				</li>
-				<li class="lang-item lang-separator">
-					<button id="lang-btn-en" class="lang-button" onclick="switchLang('en')">English</button>
-				</li>
-				<li class="lang-item lang-separator">
-					<button id="lang-btn-ja" class="lang-button" onclick="switchLang('ja')">日本語</button>
-				</li>
 			</ul>
 		</nav>
 
@@ -101,6 +88,14 @@
 						<span class="image fit"><img src="images/pic00.jpg" alt="蓬蓬 機器人圖示" /></span>
 					</div>
 					<div class="col-8 col-7-large col-12-medium">
+						
+						<div class="lang-switcher">
+							<button id="lang-btn-zh" class="lang-button" onclick="switchLang('zh')">繁體中文</button>
+							<span>|</span>
+							<button id="lang-btn-en" class="lang-button" onclick="switchLang('en')">English</button>
+							<span>|</span>
+							<button id="lang-btn-ja" class="lang-button" onclick="switchLang('ja')">日本語</button>
+						</div>
 						
 						<header>
 							<h1 data-key="header_title">蓬蓬</h1>
@@ -186,6 +181,7 @@
 			</div>
 		</article>
 
+
 		<article id="contact" class="wrapper style4">
 			<div class="container medium">
 				<header>
@@ -246,7 +242,7 @@
 				// 繁體中文
 				zh: {
 					page_title: "蓬蓬 - 您的 Discord 翻譯與匯率助理",
-					nav_home: "首頁",
+					nav_home: "首頁", // <-- 已修改
 					nav_features: "主要功能",
 					nav_how_to: "如何使用",
 					nav_support: "支持與回饋",
@@ -278,15 +274,15 @@
 					support_donate_title: "支持「蓬蓬」",
 					support_donate_desc: "「蓬蓬」是一個 24/7 運作的機器人，它依賴雲端伺服器和付費 API。如果您覺得它有幫助，可以考慮支持它的運作成本！",
 					support_donate_btn: "請我喝杯咖啡 (Buy Me a Coffee)",
-					contact_email_title: "Email:",
-					contact_feedback_title: "填寫回饋表單:",
+					contact_email_title: "Email:", // <-- 已新增
+					contact_feedback_title: "填寫回饋表單:", // <-- 已新增
 					support_feedback_discord: "加入我們的 Discord 支援伺服器 (推薦)",
-					footer_credit: "由 Hijiri 開發 | 蓬蓬 Bot v0.1"
+					footer_credit: "由 Hijiri 開發 | 蓬蓬 Bot v0.1" // <-- 已修改
 				},
 				// 英文
 				en: {
 					page_title: "Pong Pong - Your Discord Translation & Currency Bot",
-					nav_home: "Home",
+					nav_home: "Home", // <-- 已修改
 					nav_features: "Features",
 					nav_how_to: "How to Use",
 					nav_support: "Support & Feedback",
@@ -318,15 +314,15 @@
 					support_donate_title: "Support \"Pong Pong\"",
 					support_donate_desc: "\"Pong Pong\" is a 24/7 bot relying on cloud servers and paid APIs. If you find it helpful, please consider supporting its costs!",
 					support_donate_btn: "Buy Me a Coffee",
-					contact_email_title: "Email:",
-					contact_feedback_title: "Submit Feedback Form:",
+					contact_email_title: "Email:", // <-- 已新增
+					contact_feedback_title: "Submit Feedback Form:", // <-- 已新增
 					support_feedback_discord: "Join our Discord Support Server (Recommended)",
-					footer_credit: "Developed by Hijiri | Pong Pong Bot v0.1"
+					footer_credit: "Developed by Hijiri | Pong Pong Bot v0.1" // <-- 已修改
 				},
 				// 日文
 				ja: {
 					page_title: "ポンポン - Discord 翻訳＆為替ボット",
-					nav_home: "ホーム",
+					nav_home: "ホーム", // <-- 已修改
 					nav_features: "主な機能",
 					nav_how_to: "使い方",
 					nav_support: "サポート",
@@ -358,13 +354,14 @@
 					support_donate_title: "「ポンポン」をサポート",
 					support_donate_desc: "「ポンポン」はクラウドサーバーと有料APIで24時間稼働しています。もしこのボットが役に立つと感じたら、運営コストのサポートをご検討ください！",
 					support_donate_btn: "コーヒーをご馳走する (Buy Me a Coffee)",
-					contact_email_title: "Email:",
-					contact_feedback_title: "フィードバックフォーム:",
+					contact_email_title: "Email:", // <-- 已新增
+					contact_feedback_title: "フィードバックフォーム:", // <-- 已新增
 					support_feedback_discord: "Discordサポートサーバーに参加 (推奨)",
-					footer_credit: "開発者: Hijiri | ポンポン Bot v0.1"
+					footer_credit: "開発者: Hijiri | ポンポン Bot v0.1" // <-- 已修改
 				}
 			};
 
+			// --- 2. 我們的切換函式 (保持不變) ---
 			function switchLang(lang) {
 				document.querySelectorAll('[data-key]').forEach(el => {
 					const key = el.getAttribute('data-key');
@@ -375,7 +372,7 @@
 
 				document.documentElement.lang = lang;
 
-				// 使用 class 'lang-button' 來精確選擇並切換 active 狀態
+				// 【修改】使用 class 'lang-button' 來選擇
 				document.getElementById('lang-btn-zh').classList.toggle('active', lang === 'zh');
 				document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
 				document.getElementById('lang-btn-ja').classList.toggle('active', lang === 'ja');
@@ -383,6 +380,7 @@
 				document.title = translations[lang].page_title || "蓬蓬 Bot";
 			}
 			
+			// --- 3. 頁面載入時，預設為中文 ---
 			document.addEventListener('DOMContentLoaded', () => {
 				switchLang('zh');
 			});
